@@ -67,6 +67,8 @@ function detailswindow(id){
     datails = new BrowserWindow({
         height: 500,
         width: 500,
+        modal:true,
+        parent:window,
         webPreferences: {
             worldSafeExecuteJavaScript: true,
             nodeIntegration:true

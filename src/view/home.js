@@ -67,7 +67,6 @@ async function writeitems() {
 function main() {
     writeitems()
     ipcRenderer.on('home:update',()=>{
-        console.log('llego')
         writeitems()
     })
 
