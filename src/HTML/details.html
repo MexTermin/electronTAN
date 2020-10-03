@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' ; script-src 'self' ">
+    <title>Details</title>
+</head>
+
+<body>
+    <div class="details-container">
+        <div class="details-body">
+            <div class="details-container-form">
+                <form id="form-details">
+                    <div class="form-group">
+                        <h1 class="form-control">Note Details</h1>
+                        <input type="text" name="name-details" id="name-details" class="form-control">
+                        <textarea name="description-details" id="description-details" cols="20" rows="10"></textarea>
+                        <div class="form-control">
+                            <input type="checkbox" name="done-details" id="done-details">
+                            <label for="done-details">Done</label>
+                        </div>
+                        <input type="submit" class="btn-form" value="Save">
+                        <button class="btn-form btn-danger" value="">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../view/details.js"></script>
+
+</html>

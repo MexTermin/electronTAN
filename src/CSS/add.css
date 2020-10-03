@@ -1,0 +1,83 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    width: 100vw;
+    height: 100vh;  
+    /* background: linear-gradient(to right, #bdc3c7, #8392a3); */
+    /* background-color: rgb(220, 213, 213); */
+    /* display: flex; */
+    background: linear-gradient(to left, #8e0e00, #6b1b19); 
+}
+
+/* 
+.section-left{
+    width: 10%;
+    height: 100%;
+    background-color: red;
+} */
+/* .section-right{
+    width: 10%;
+    height: 100%;
+    background-color: red;
+} */
+.section-center{
+    /* width: 80%; */
+    height:100%;
+    max-width: 500px;
+    /* max-height: 500px; */
+    min-width: 400px;
+    /* min-height: 350px; */
+    /* background-color: blue; */
+    margin: auto;
+}
+.form-group{
+    /* max-height: 500px; 
+    margin:auto;
+    background-color: #93291e; */
+    margin-top: 18vh ;    
+}
+.card-form-add{
+    padding-top: 10px;
+    padding-bottom: 10px;
+   
+    /* background-color: #93291e; */
+}
+.form-control{
+    display: block;
+    max-width: 99.3%;
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 15px;
+    /* margin-top: 10px; */
+    border: white 0px solid;
+    border-radius: 5px;
+
+}
+.div-done{
+    padding-left: 0px;
+   
+}
+.btn-form{
+    max-width: 99.3%;
+    width: 83%;
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: linear-gradient(to left, #11998e, #38ef7d);
+    border: white 0px solid;
+    border-radius: 5px;
+}
+.btn-form:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.btn-danger{
+    background: linear-gradient(to left, #ed213a, #93291e);
+    text-align: center;
+    width: 79.3%;
+
+}

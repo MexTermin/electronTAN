@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' " >
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' " >
+    <link rel="stylesheet" href="../CSS/add.css">
+    <title>Add item</title>
+</head>
+    <body>
+        <div class="container">
+            <div class="section-left"></div>
+                <div class="section-center">
+                    <div class="card-form-add">
+                        <form id="form-add">
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" placeholder="Name" class="form-control" maxlength="70">
+                                <input type="text" name="description" id="description" placeholder="Description" class="form-control" required>
+                                <div class="div-done form-control">
+                                    <input type="checkbox" name="done" id="done" placeholder="Done" class="">
+                                    <label for="done">Done</label>
+                                </div>
+                                <input type="submit" class="btn-form" value="Save">
+                                <input class="btn-form btn-danger" value="Cancel">
+                                <span id="message" class="form-control"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            <div class="section-right"></div>
+        </div>
+    </body>
+    <script src="../view/functions.js"></script>
+</html>
