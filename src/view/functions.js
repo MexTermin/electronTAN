@@ -25,7 +25,7 @@ formadd.addEventListener('submit', async (e) => {
     const connect = await getConnection()
     let ms = document.querySelector('#message')
     try {
-        const result = await connect.query('INSERT INTO  todo set ?', dates)
+        await connect.query('INSERT INTO  todo set ?', dates)
         e.target.name.value = ''
         e.target.description.value = ''
         e.target.done.checked = false
@@ -36,6 +36,14 @@ formadd.addEventListener('submit', async (e) => {
         ms.textContent = 'Save Error'
         ms.style = 'color:red; text-shadow: gray 1px 1px 3px;'
     }
-    }
-)
+    })  
 
+
+    let btn = document.querySelector('.btn-danger')
+    btn.addEventListener("click",(e)=>{
+    let conf = confirm('Do you want to quit?')
+    if (conf === true){
+        window.close()
+    }
+   
+})

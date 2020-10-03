@@ -78,6 +78,7 @@
 .btn-danger{
     background: linear-gradient(to left, #ed213a, #93291e);
     text-align: center;
-    width: 79.3%;
+    /* width: 79.3%; */
+    color: black;
 
 }
