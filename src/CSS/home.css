@@ -70,8 +70,81 @@
 
 
     }
+.left-section{
+    position: fixed;
+    top: 90.6%;
+    /* background-color: #004e92; */
+    width: 100%;
+    /* left: 84.9%; */
+}
+.items{
+    /* width: 100px; */
+    /* display: inline; */
+    /* display: block; */
+    /* width: 200px; */
+    /* background-color: #004e92; */
 
+    display: flex;
+    float: right;;
+    
+}
+.add-button{
 
+    
+    background-color: #e42c17;
+    color: white;
+    /* text-align: center; */
+    
+}
 
+.button-nav{
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    margin: 5px;
+}
+.button-nav:hover{
+    position: relative;
+    top: -10px;
+    left: -5px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.add-button div{
+    /* margin: auto; */
+    position: relative;
+    width: 20px;
+    /* height: 20px; */
+    /* background-color: #004e92; */
+    top: 25px;
+    left: 30px;
+    /* text-align: center; */
+    display: flex;
+    
+    
+}
+.timer-button{
+    background-color: #d42916;
+}
+.timer-button .border-time{
+    border: white 3px solid;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    position: relative;
+    top: 23px;
+    left: 24px;
+}
+.timer-button .arrow{
+    /* background-color: #004e92; */
+    border-bottom: white 2px solid;
+    border-right: white 2px solid;
+    width: 2px;
+    height: 4px;
+    position: relative;
+    top: 3px;
+    left: 5px;
+    border-radius: 5px;
+}
 
     

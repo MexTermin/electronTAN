@@ -9,6 +9,7 @@
     /* background-color: rgb(220, 213, 213); */
     /* display: flex; */
     background: linear-gradient(to left, #8e0e00, #6b1b19); 
+
 }
 
 /* 
@@ -82,3 +83,11 @@
     color: black;
 
 }
+#done{
+    transform: scale(1.6);
+    margin-right: 10px;
+    
+  }
+#done:hover{
+      cursor: pointer;
+  }

@@ -1,13 +1,12 @@
 const { getConnection } = require('../database/db')
-const {ipcRenderer,remote} = require('electron')
-// const { detailswindow } = require('./app')
-// e = require('../view/app').detailswindow
+const { ipcRenderer } = require('electron')
+
 
 async function getallid() {
     id = 1
     const connect = await getConnection()
     try {
-        const result = await connect.query('select * from  todo where  id like ?', id)
+        const result = await connect.query('select * from  todo where  id like ? order by note_id DESC', id)
         return result
     } catch (e) {
         console.log(e.message)
@@ -56,19 +55,48 @@ async function writeitems() {
             item.style = 'box-shadow:white 0px 0px 0px;'
 
         }, false)
-        item.addEventListener('click',()=>{
-            ipcRenderer.send('home:id',{note:item.id})
-           
+        item.addEventListener('click', () => {
+            ipcRenderer.send('home:id', { note: item.id })
+
         })
 
     })
 }
 
+function buttonHomeAdd() {
+    const add = document.querySelector('.add-button')
+    add.addEventListener('click', () => {
+        ipcRenderer.send('home:addbutton', { messaje: 'add new item' })
+    })
+    add.addEventListener('mousedown', () => {
+        add.style = ' box-shadow: gray 0px 0px 10px;'
+    })
+    add.addEventListener('mouseup', () => {
+        add.style = ' box-shadow: gray 0px 0px 0px;'
+    })
+}
+
+function buttonTimer(){
+    const button = document.querySelector(".timer-button")
+    button.addEventListener('click', () => {
+        ipcRenderer.send('home:timeTracker', { messaje: 'Time tracker' })
+    })
+    button.addEventListener('mousedown', () => {
+        button.style = ' box-shadow: gray 0px 0px 10px;'
+    })
+    button.addEventListener('mouseup', () => {
+        button.style = ' box-shadow: gray 0px 0px 0px;'
+    })
+}
+
 function main() {
     writeitems()
-    ipcRenderer.on('home:update',()=>{
+    buttonHomeAdd()
+    buttonTimer()
+    ipcRenderer.on('home:update', () => {
         writeitems()
     })
+
 
 }
 

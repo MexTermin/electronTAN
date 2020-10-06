@@ -2,8 +2,8 @@ const { ipcRenderer } = require('electron')
 const { getConnection } = require('../database/db')
 
 
-let formadd = document.querySelector('#form-add')
 
+let formadd = document.querySelector('#form-add')
 formadd.addEventListener('submit', async (e) => {
     e.preventDefault()
     // console.log(e.target)
@@ -41,9 +41,9 @@ formadd.addEventListener('submit', async (e) => {
 
     let btn = document.querySelector('.btn-danger')
     btn.addEventListener("click",(e)=>{
-    let conf = confirm('Do you want to quit?')
-    if (conf === true){
+    // let conf = confirm('Do you want to quit?')
+    // if (conf === true){
         window.close()
-    }
+    // }
    
 })
