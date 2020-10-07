@@ -1,5 +1,5 @@
 const {app} = require('electron')
-const {mainWindow} = require('./view/app')
+const {mainWindow} = require('./scripts/app')
 require('electron-reload')(__dirname)
 require('./database/db')
 // const {getConnection} = require('./database/db')

@@ -105,7 +105,13 @@ function timeTracker(){
             worldSafeExecuteJavaScript:true
         }
     })
-    
+
+    timerwindow.loadURL(url.format({
+        pathname:path.join(__dirname,"../html/timer.html"),
+        protocol:"file",
+        slashes:true
+    }
+    ))
 }
 
 
