@@ -6,29 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' ; script-src 'self' ">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self' ; script-src 'self' ">
-    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/timer.css">
+    <title>Timer Tracker</title>
 </head>
 
 <body>
     <div class="container-timer">
         <div class="section-timer">
-            <!-- <span  name="time" id="time"></span> -->
             <div class="top-bar">
-                <form action="">
+                <form action="" id="main-form-time">
                     <div class="form-group">
-                        <input type="text" name="" id="" class="form-control">
-                        <div class="time"></div>
+                        <input type="text" name="" id="time-name" class="form-control">
+                        <div id="time">00:00:00</div>
                         <div class="options">
-                            <button type="button" class="btn btn-blue" id="btnstart">Start</button>
-                            <button type="submit" class="btn btn-green" id="btnsave">Save</button>
-                            <button type="button" class="btn btn-red" id="btndelete">Delete</button>
+                            <button type="button" class="btn btn-blue" id="btnstart" >Start</button>
+                            <button type="submit" class="btn btn-green" id="btnstop" disabled>Stop</button>
+                            <button type="button" class="btn btn-red" id="btnClear">Clear</button>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="bottom-section">
-            </div>
-
+            <div class="quitbar">
+                <div class="bottom-section">
+                </div>
+            </div>9
         </div>
     </div>
     <script src="../scripts/timer.js"></script>

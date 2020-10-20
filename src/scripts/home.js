@@ -1,5 +1,6 @@
 const { getConnection } = require('../database/db')
 const { ipcRenderer } = require('electron')
+// let remote = require.resolve('electron')
 
 
 async function getallid() {
@@ -76,10 +77,10 @@ function buttonHomeAdd() {
     })
 }
 
-function buttonTimer(){
+function buttonTimer() {
     const button = document.querySelector(".timer-button")
     button.addEventListener('click', () => {
-        ipcRenderer.send('home:timeTracker', { messaje: 'Time tracker' })
+        ipcRenderer.send('home:timeTracker', { message: 'Time tracker' })
     })
     button.addEventListener('mousedown', () => {
         button.style = ' box-shadow: gray 0px 0px 10px;'
@@ -97,7 +98,14 @@ function main() {
         writeitems()
     })
 
+    ipcRenderer.send('home:getUser', { message: 'hello' })
 
+    // ipcRenderer.on('home:getUser', (e, m) => {
+    //     console.log(m)
+    // })
+    // console.log(session.defaultSession.cookies.get("user"))
+
+    // console.log(require('electron'))
 }
 
 main()
