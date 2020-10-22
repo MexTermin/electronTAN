@@ -4,22 +4,21 @@ const { getConnection } = require('../database/db')
 
 
 let formadd = document.querySelector('#form-add')
+let user = ipcRenderer.sendSync('home:getUser', { message: 'el user pls' })
 formadd.addEventListener('submit', async (e) => {
     e.preventDefault()
-    // console.log(e.target)
-    let id = 1
     let name = e.target.name.value
     let description = e.target.description.value
     let done = e.target.done.checked
     let dates
     if (name != '') {
         dates = {
-            id, name, description, done
+            name, description, done, user
         }
     }
     else {
         dates = {
-            id, description, done
+            description, done, user
         }
     }
     const connect = await getConnection()
@@ -36,14 +35,11 @@ formadd.addEventListener('submit', async (e) => {
         ms.textContent = 'Save Error'
         ms.style = 'color:red; text-shadow: gray 1px 1px 3px;'
     }
-    })  
+})
 
 
-    let btn = document.querySelector('.btn-danger')
-    btn.addEventListener("click",(e)=>{
-    // let conf = confirm('Do you want to quit?')
-    // if (conf === true){
-        window.close()
-    // }
-   
+let btn = document.querySelector('.btn-danger')
+btn.addEventListener("click", (e) => {
+    window.close()
+
 })

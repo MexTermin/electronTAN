@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' " >
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' " >
+    <link rel="stylesheet" href="../CSS/signin.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="signin-background-container">    
+        <div class="container-signin">
+            <div class="title">
+                <h1>Sign in</h1>
+            </div>
+            <form id="form-signin">
+                <div class="form-group">
+                    <input type="text" name="name" id="" class="form-control" placeholder="Name" required>
+                    <input type="email" name="email" id="" class="form-control" placeholder="Email" required>
+                    <input type="password" name="password" id="" class="form-control" placeholder="Password" required>
+                    <div class="button-section">
+                        <button type="submit" class="btn btn-green" id="btn-sign">Sign in</button>
+                        <button type="button" class="btn btn-blue" id="btn-log">Return Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../scripts/signin.js"></script>
+</body>
+</html>

@@ -5,15 +5,27 @@
 .container{
     width: 100vw;
     height: 100vh;
+
     /* background: linear-gradient(to right, #000428, #004e92);  */
     /* background: linear-gradient(to right, #141e30, #243b55); */
-    
-    background: linear-gradient(to left, #8e0e00, #1f1c18); 
+    /* background: linear-gradient(to bottom, #f7f8f8, #78abbb); */
+    /* background-color: #004e92; */
+    background: linear-gradient(to left, #8e0e00, #4d0000); 
     /* background: linear-gradient(to left, #fe8c00, #f83600);  */
 
 }
 .main-container-home{
+    /* background-color: #8e0e00; */
+    background-color: rgb(216, 216, 216);
     padding: 0px 10px;
+    width: 90%;
+    height: 85%;
+    overflow: auto;
+    margin: auto;
+    box-shadow: rgb(255, 255, 255) 0px 0px 20px;
+    border-bottom-left-radius: 70px;
+    border-top-right-radius: 70px;
+    padding: 10px;
 }
 
 .items-container{
@@ -42,8 +54,10 @@
 
 }
 .title h1{
+    color: rgb(215, 244, 255);
+    text-shadow:rgb(0, 204, 211) 0px 0px 10px;
     text-align: center;
-    text-shadow: #48967f 1px 1px 5px;
+    /* text-shadow: #48967f 1px 1px 5px; */
     font-size: 50px;
 }
 .div-name{

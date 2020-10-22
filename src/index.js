@@ -1,5 +1,5 @@
 const {app} = require('electron')
-const {mainWindow,loginWindow} = require('./scripts/app')
+const {mainWindow} = require('./scripts/app')
 require('electron-reload')(__dirname)
 require('./database/db')
 // const {getConnection} = require('./database/db')
@@ -8,5 +8,11 @@ app.allowRendererProcessReuse = true
 app.whenReady().then(async ()=>{
     // getConnection()
     mainWindow()
-    // loginWindow()
-})
+
+    // app.on("will-quit",  ()=> {
+        //     app.quit();
+        //   });
+    })
+app.on("windows-all-closed",  ()=> {
+    app.quit();
+    });

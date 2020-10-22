@@ -1,6 +1,7 @@
 const { BrowserWindow, Menu, ipcMain, session } = require('electron')
 const url = require('url')
 const path = require('path')
+const { app } = require('electron/main')
 
 let window
 let newitemview
@@ -8,6 +9,7 @@ let mainmenu
 let datails
 let timerwindow
 let login
+let signin
 if (Menu) {
     mainmenu = Menu.buildFromTemplate([
         {
@@ -38,14 +40,20 @@ async function mainWindow() {
             title: 'Practica ElectronJS',
             width: 1000,
             height: 750,
+            minHeight:850,
+            minWidth:1000,
             fullscreenable: false,
             center: true,
-            modal:false,
+            modal: false,
             // titleBarStyle:"customButtonsOnHover",
             webPreferences: {
                 nodeIntegration: true,
                 worldSafeExecuteJavaScript: true
+            },
+            close() {
+                app.quit();
             }
+
         })
 
         window.loadURL(url.format({
@@ -55,8 +63,16 @@ async function mainWindow() {
         }))
         // menu = window
         // window.setMenu(null)
-        window.setMenu(mainmenu)
+        window.setMenu(null)
         window.maximize()
+    }
+    if (window) {
+        window.on('close', (e) => {
+            // e.preventDefault()
+            // login.show()
+            login.close()
+            // window.close()
+        })
     }
 }
 
@@ -72,7 +88,7 @@ function newitem() {
         },
         resizable: false,
         close() {
-            newitem.quit()
+            newitemview.quit()
         }
     })
     newitemview.setMenu(null)
@@ -125,6 +141,7 @@ function timeTracker() {
         slashes: true
     }
     ))
+    timerwindow.setMenu(null)
 }
 
 function loginWindow() {
@@ -135,9 +152,6 @@ function loginWindow() {
         webPreferences: {
             nodeIntegration: true,
             worldSafeExecuteJavaScript: true
-        },
-        close(){
-            e.preventDefault()
         }
     })
     login.loadURL(url.format(
@@ -147,26 +161,50 @@ function loginWindow() {
             slashes: true
         }
     ))
+    login.setMenu(null)
+
+}
+function signinWindow() {
+
+    signin = new BrowserWindow({
+        height: 500,
+        width: 500,
+        webPreferences: {
+            nodeIntegration: true,
+            worldSafeExecuteJavaScript: true
+        }
+    })
+    signin.loadURL(url.format(
+        {
+            pathname: path.join(__dirname, '../HTML/signin.html'),
+            protocol: "file",
+            slashes: true
+        }
+    ))
+    // signin.setMenu(null)
+    signin.on('close',()=>{
+        login.show()
+    })
 
 }
 
-function logout(){
-    session.defaultSession.cookies.remove('https://localhost/','user_id')
-    .then((e)=>{
-        console.log(e)
-    })
-    .catch((error)=>{
+function logout() {
+    session.defaultSession.cookies.remove('https://localhost/', 'user_id')
+        .then((e) => {
+            console.log(e)
+        })
+        .catch((error) => {
 
-    })
+        })
 
 }
-async function  getUser() {
+async function getUser() {
     let user_result
     await session.defaultSession.cookies.get({ name: 'user_id' })
         .then((cookies) => {
             if (cookies) {
                 // console.log(cookies[0].value)
-                if(cookies[0]){
+                if (cookies[0]) {
                     user_result = cookies[0].value
                 }
             }
@@ -197,10 +235,20 @@ ipcMain.on('homeWindow', (e, m) => {
     mainWindow()
 })
 ipcMain.on('closeLogin', (e, m) => {
-   login.on('close',(e)=>{
-        e.preventDefault();
-        login.hide()
-   })
+
+    login.hide()
+
+})
+ipcMain.on('hideSign', (e, m) => {
+
+    signin.hide()
+
+})
+ipcMain.on('login:signin', (e, m) => {
+
+    login.hide()
+    signinWindow()
+
 })
 ipcMain.on('login:saveCookies', (e, user) => {
     value = user.user_id

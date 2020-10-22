@@ -15,13 +15,16 @@ if (formLogin){
             console.log('sending') 
             ipcRenderer.send('homeWindow',{})
             ipcRenderer.send('closeLogin',{})
-            window.close()
+            // window.close()
         }
 
-    //    let user =  ipcRenderer.sendSync('home:getUser','el user pls')
-    //     console.log(user)
     })
 
 }
+
+let sign = document.querySelector('#btn-sign')
+sign.addEventListener('click',()=>{
+    ipcRenderer.send('login:signin')
+})
 
 

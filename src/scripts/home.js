@@ -1,13 +1,13 @@
 const { getConnection } = require('../database/db')
 const { ipcRenderer } = require('electron')
+let user =  ipcRenderer.sendSync('home:getUser',{message:'el user pls'})
 // let remote = require.resolve('electron')
 
 
 async function getallid() {
-    id = 1
     const connect = await getConnection()
     try {
-        const result = await connect.query('select * from  todo where  id like ? order by note_id DESC', id)
+        const result = await connect.query('select * from  todo where  user like ? order by note_id DESC', user)
         return result
     } catch (e) {
         console.log(e.message)

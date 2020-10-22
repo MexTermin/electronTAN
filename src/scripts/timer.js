@@ -3,7 +3,7 @@ const { getConnection } = require('../database/db')
 let conection
 //-------------------------------------------Variables-----------------------------------------
 let nodeIntervar
-let user =  ipcRenderer.sendSync('home:getUser',{message:'el user pls'})
+let user = ipcRenderer.sendSync('home:getUser', { message: 'el user pls' })
 function twobinary(number) {
     /*
         this function convert one number in 0+number for represent a valid data time
@@ -133,12 +133,12 @@ stoptb.addEventListener("click", async (e) => {
     // const con = await getConnection()
     const name = document.querySelector('#time-name').value
     const time = document.querySelector('#time').textContent
-    const update =  document.querySelector('#btnstop').getAttribute('update')
+    const update = document.querySelector('#btnstop').getAttribute('update')
     try {
-        if(update === 'true'){
-            conection.query('update timer set ? where id_time like ? and user like ?',[{name,time},id,user])
+        if (update === 'true') {
+            conection.query('update timer set ? where id_time like ? and user like ?', [{ name, time }, id, user])
             document.querySelector('#btnstop').removeAttribute('update')
-        }else{
+        } else {
             conection.query("insert into timer set ?", { user, name, time })
         }
         document.querySelector('#time-name').value = ""
@@ -166,7 +166,7 @@ function configbtnd() {
     let btndelete = document.querySelectorAll(".btndelete")
     let btnupdate = document.querySelectorAll('.btnupdate')
     let btnresume = document.querySelectorAll('.btnresume')
-    let inputname= document.querySelectorAll(".name-control")
+    let inputname = document.querySelectorAll(".name-control")
     if (btndelete) {
         btndelete.forEach(b => {
             b.addEventListener('click', async () => {
@@ -185,33 +185,30 @@ function configbtnd() {
                 e.preventDefault()
                 value = b.parentNode.parentNode.querySelector('#name').value
                 id = b.parentNode.parentNode.getAttribute('id')
-                const result = conection.query('update timer set ? where id_time like ? and user like ?',[{name:value},id,user])
-                // console.log(result.changedRows)
-                timers()
+                conection.query('update timer set ? where id_time like ? and user like ?;', [{ name: value }, id, user])
                 b.disabled = true
-                // console.log('yes')
             })
         })
     }
-    if(btnresume){
-        btnresume.forEach(b=>{
-            b.addEventListener('click',(e)=>{
+    if (btnresume) {
+        btnresume.forEach(b => {
+            b.addEventListener('click', (e) => {
                 e.preventDefault()
                 value = b.parentNode.parentNode.querySelector('#name').value
                 id = b.parentNode.parentNode.getAttribute('id')
                 time = b.parentNode.parentNode.querySelector('.time-view').textContent
                 document.querySelector('#time-name').value = value
                 document.querySelector('#time').textContent = time
-                document.querySelector("#main-form-time").setAttribute('timeId',`${id}`)
-                document.querySelector('#btnstop').setAttribute('update',true)
+                document.querySelector("#main-form-time").setAttribute('timeId', `${id}`)
+                document.querySelector('#btnstop').setAttribute('update', true)
                 document.querySelector('#btnstart').click()
             })
         })
     }
 
-    if(inputname){
-        inputname.forEach(i=>{
-            i.addEventListener("keyup",()=>{
+    if (inputname) {
+        inputname.forEach(i => {
+            i.addEventListener("keyup", () => {
                 const target = i.parentNode.querySelector('.btnupdate')
                 target.disabled = false
             })
@@ -234,5 +231,4 @@ async function timers() {
 document.addEventListener('DOMContentLoaded', async () => {
     conection = await getConnection()
     await timers()
-    // await configbtnd()
 })

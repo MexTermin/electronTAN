@@ -73,6 +73,7 @@
 }
 .btn:disabled{
     color: rgb(92, 92, 92);
+   
     background: linear-gradient(to top, #0456a8, #0b2996);
 }
 .btnupdate:disabled{
