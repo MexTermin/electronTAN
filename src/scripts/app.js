@@ -63,7 +63,8 @@ async function mainWindow() {
     }
     if (window) {
         window.on('close', (e) => {
-            login.close()
+            app.quit();
+
         })
     }
 }
