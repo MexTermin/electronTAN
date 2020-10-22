@@ -9,22 +9,9 @@
     background: linear-gradient(to left, #8e0e00, #691a18);
 }
 .details-container-form{
-    /* background-color: blue; */
     margin: auto;
     width: 400px;
     
-}
-.form-details{
-    /* display: inline; */
-}
-#description-details{
-    /* padding: 1px; */
-}
-.form-group{
-    /* display: inline-block; */
-    /* width: 250px; */
-    
-    /* background-color: white; */
 }
 
 .form-control{
@@ -71,7 +58,6 @@
 .btn-danger{
     background: linear-gradient(to left, #ed213a, #93291e);
     text-align: center;
-    /* width: 79.3%; */
     color: black;
 
 }
@@ -79,7 +65,6 @@
 #done-details{
   transform: scale(1.6);
   margin-right: 10px;
-  
 }
 #done-details:hover{
     cursor: pointer;

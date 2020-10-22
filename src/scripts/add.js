@@ -1,8 +1,5 @@
 const { ipcRenderer } = require('electron')
 const { getConnection } = require('../database/db')
-
-
-
 let formadd = document.querySelector('#form-add')
 let user = ipcRenderer.sendSync('home:getUser', { message: 'el user pls' })
 formadd.addEventListener('submit', async (e) => {

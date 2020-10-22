@@ -16,15 +16,11 @@
 }
 .quitbar{
     overflow: hidden;
-    /* height: 93vh ; */
-    /* width: 100%; */
     margin-right: -15px;
 }
 .bottom-section{
-    /* height: 75vh; */
     height: 90vh ;
     max-height: 90vh;
-    /* margin-top: 50px; */
     overflow-y: scroll;
 }
 .form-group{
@@ -36,9 +32,7 @@
     padding:6px;
     width: 49%;
     margin: 5px;
-    /* background: linear-gradient(to right, #d3d1ca, #f2f2f2); */
     background-color: white;
-    /* background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); */
     box-shadow: white 0px 0px 6px;
     border-radius: 5px;
 }
@@ -47,15 +41,11 @@
     text-align: center;
     margin: auto;
     width: 80px;
-    /* background-color: antiquewhite; */
     color: white;
 }
 .options{
     display: flex;
     justify-content: space-between;
-    /* width: 10%; */
-    /* padding-left: 5px;
-    padding-right: 25px; */
 }
 
 .btn{
@@ -73,7 +63,6 @@
 }
 .btn:disabled{
     color: rgb(92, 92, 92);
-   
     background: linear-gradient(to top, #0456a8, #0b2996);
 }
 .btnupdate:disabled{
@@ -88,36 +77,30 @@
 }
 .btnl{
     background: linear-gradient(to top, #abd7ff, #6f8fff);
-    /* background: linear-gradient(to top, #94c8fc, #5474e8); */
     border: #021b79 solid 0px;
 }
 
 .card-timer{
-    /* box-shadow: gray 1px 1px 5px; */
     box-shadow: rgb(92, 176, 232) 1px 1px 5px;
     display: flex;
     margin-top: 15px;
     margin-bottom: 15px;
     height: 45px;
     padding: 3px;
-    /* display: block; */
-    /* background-color: red; */
 }.card-timer:hover{
     box-shadow: rgb(80, 164, 219) 1px 1px 10px;
 }
 .name-control{
     margin-bottom: auto;
     margin-top: auto;
-    /* box-shadow: rgba(172, 215, 243,0.6) 1px 1px 5px; */
     border: solid 0px white;
     height: 19px;
     padding: 10px;
     width: 50%;
-    /* text-align: center; */
-    /* border-radius: 5px; */
+
 }
 .time-view{
-    /* background-color: red; */
+
     text-align: center;
     margin: auto;
     width: 15%;

@@ -4,46 +4,25 @@
 }
 .container{
     width: 100vw;
-    height: 100vh;  
-    /* background: linear-gradient(to right, #bdc3c7, #8392a3); */
-    /* background-color: rgb(220, 213, 213); */
-    /* display: flex; */
+    height: 100vh; 
     background: linear-gradient(to left, #8e0e00, #6b1b19); 
 
 }
 
-/* 
-.section-left{
-    width: 10%;
-    height: 100%;
-    background-color: red;
-} */
-/* .section-right{
-    width: 10%;
-    height: 100%;
-    background-color: red;
-} */
+
 .section-center{
-    /* width: 80%; */
     height:100%;
     max-width: 500px;
-    /* max-height: 500px; */
     min-width: 400px;
-    /* min-height: 350px; */
-    /* background-color: blue; */
     margin: auto;
 }
 .form-group{
-    /* max-height: 500px; 
-    margin:auto;
-    background-color: #93291e; */
-    margin-top: 18vh ;    
+    margin-top: 18vh ;
 }
 .card-form-add{
     padding-top: 10px;
     padding-bottom: 10px;
    
-    /* background-color: #93291e; */
 }
 .form-control{
     display: block;
@@ -52,7 +31,6 @@
     padding: 10px;
     margin: auto;
     margin-bottom: 15px;
-    /* margin-top: 10px; */
     border: white 0px solid;
     border-radius: 5px;
 
@@ -79,7 +57,6 @@
 .btn-danger{
     background: linear-gradient(to left, #ed213a, #93291e);
     text-align: center;
-    /* width: 79.3%; */
     color: black;
 
 }

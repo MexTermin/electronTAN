@@ -9,7 +9,7 @@ let mainmenu
 let datails
 let timerwindow
 let login
-let signin
+let signup
 if (Menu) {
     mainmenu = Menu.buildFromTemplate([
         {
@@ -24,7 +24,6 @@ if (Menu) {
 }
 async function middleWare() {
     let user = await getUser()
-    // console.log(user)
     if (user != undefined) {
         return true
     } else {
@@ -34,7 +33,6 @@ async function middleWare() {
 
 async function mainWindow() {
     middle = await middleWare()
-    // console.log('middle es ', middle)
     if (middle === true) {
         window = new BrowserWindow({
             title: 'Practica ElectronJS',
@@ -45,7 +43,6 @@ async function mainWindow() {
             fullscreenable: false,
             center: true,
             modal: false,
-            // titleBarStyle:"customButtonsOnHover",
             webPreferences: {
                 nodeIntegration: true,
                 worldSafeExecuteJavaScript: true
@@ -61,17 +58,12 @@ async function mainWindow() {
             slashes: true,
             protocol: 'file'
         }))
-        // menu = window
-        // window.setMenu(null)
         window.setMenu(null)
         window.maximize()
     }
     if (window) {
         window.on('close', (e) => {
-            // e.preventDefault()
-            // login.show()
             login.close()
-            // window.close()
         })
     }
 }
@@ -164,9 +156,9 @@ function loginWindow() {
     login.setMenu(null)
 
 }
-function signinWindow() {
+function signupWindow() {
 
-    signin = new BrowserWindow({
+    signup = new BrowserWindow({
         height: 500,
         width: 500,
         webPreferences: {
@@ -174,15 +166,15 @@ function signinWindow() {
             worldSafeExecuteJavaScript: true
         }
     })
-    signin.loadURL(url.format(
+    signup.loadURL(url.format(
         {
-            pathname: path.join(__dirname, '../HTML/signin.html'),
+            pathname: path.join(__dirname, '../HTML/signup.html'),
             protocol: "file",
             slashes: true
         }
     ))
-    // signin.setMenu(null)
-    signin.on('close',()=>{
+    signup.setMenu(null)
+    signup.on('close',()=>{
         login.show()
     })
 
@@ -191,7 +183,7 @@ function signinWindow() {
 function logout() {
     session.defaultSession.cookies.remove('https://localhost/', 'user_id')
         .then((e) => {
-            console.log(e)
+            
         })
         .catch((error) => {
 
@@ -203,7 +195,6 @@ async function getUser() {
     await session.defaultSession.cookies.get({ name: 'user_id' })
         .then((cookies) => {
             if (cookies) {
-                // console.log(cookies[0].value)
                 if (cookies[0]) {
                     user_result = cookies[0].value
                 }
@@ -241,18 +232,17 @@ ipcMain.on('closeLogin', (e, m) => {
 })
 ipcMain.on('hideSign', (e, m) => {
 
-    signin.hide()
+    signup.hide()
 
 })
-ipcMain.on('login:signin', (e, m) => {
+ipcMain.on('login:signup', (e, m) => {
 
     login.hide()
-    signinWindow()
+    signupWindow()
 
 })
 ipcMain.on('login:saveCookies', (e, user) => {
     value = user.user_id
-    // console.log('received')
     session.defaultSession.cookies.set({ url: 'https://localhost/', name: 'user_id', value: value.toString() })
         .then(() => {
 
@@ -264,7 +254,7 @@ ipcMain.on('login:saveCookies', (e, user) => {
 
 
 ipcMain.on('home:getUser', async (e, m) => {
-    // console.log('searching')
+
     let result = await getUser()
     e.returnValue = result
 })

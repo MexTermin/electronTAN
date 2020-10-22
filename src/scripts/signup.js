@@ -1,8 +1,8 @@
-const signin = document.querySelector("#form-signin")
+const signup = document.querySelector("#form-signup")
 const { ipcRenderer } = require('electron/renderer')
 const {getConnection} = require('../database/db')
-if (signin){
-    signin.addEventListener('submit', async e =>{
+if (signup){
+    signup.addEventListener('submit', async e =>{
         e.preventDefault()
         const conn = await getConnection()
         let email = e.target.email.value

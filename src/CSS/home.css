@@ -6,16 +6,10 @@
     width: 100vw;
     height: 100vh;
 
-    /* background: linear-gradient(to right, #000428, #004e92);  */
-    /* background: linear-gradient(to right, #141e30, #243b55); */
-    /* background: linear-gradient(to bottom, #f7f8f8, #78abbb); */
-    /* background-color: #004e92; */
-    background: linear-gradient(to left, #8e0e00, #4d0000); 
-    /* background: linear-gradient(to left, #fe8c00, #f83600);  */
+    background: linear-gradient(to left, #8e0e00, #4d0000);
 
 }
 .main-container-home{
-    /* background-color: #8e0e00; */
     background-color: rgb(216, 216, 216);
     padding: 0px 10px;
     width: 90%;
@@ -49,7 +43,7 @@
 }
 
 .items-container .d0{
-    
+
     background: linear-gradient(to left, #e43a15, #e65245) !important;
 
 }
@@ -57,26 +51,20 @@
     color: rgb(215, 244, 255);
     text-shadow:rgb(0, 204, 211) 0px 0px 10px;
     text-align: center;
-    /* text-shadow: #48967f 1px 1px 5px; */
     font-size: 50px;
 }
 .div-name{
     background-color: rgba(26, 235, 190, 0.159);
-   
-    /* margin-top: 40px; */
     padding: 5px;
     overflow: auto;
-    
 }
 .div-name h4{
-    /* background-color: red; */
     width: 455px;
     padding-top: 3px;
     height: 20px;
     max-height: 20px;
-    /* background-color: #1cefff; */
 }
-.scroll-v{ 
+.scroll-v{
     margin-top: 40px;
     height: 33px;
 
@@ -87,28 +75,16 @@
 .left-section{
     position: fixed;
     top: 90.6%;
-    /* background-color: #004e92; */
     width: 100%;
-    /* left: 84.9%; */
 }
 .items{
-    /* width: 100px; */
-    /* display: inline; */
-    /* display: block; */
-    /* width: 200px; */
-    /* background-color: #004e92; */
-
     display: flex;
     float: right;;
-    
 }
 .add-button{
 
-    
     background-color: #e42c17;
     color: white;
-    /* text-align: center; */
-    
 }
 
 .button-nav{
@@ -125,17 +101,11 @@
     cursor: pointer;
 }
 .add-button div{
-    /* margin: auto; */
     position: relative;
     width: 20px;
-    /* height: 20px; */
-    /* background-color: #004e92; */
     top: 25px;
     left: 30px;
-    /* text-align: center; */
     display: flex;
-    
-    
 }
 .timer-button{
     background-color: #d42916;
@@ -150,7 +120,6 @@
     left: 24px;
 }
 .timer-button .arrow{
-    /* background-color: #004e92; */
     border-bottom: white 2px solid;
     border-right: white 2px solid;
     width: 2px;
@@ -161,4 +130,3 @@
     border-radius: 5px;
 }
 
-    

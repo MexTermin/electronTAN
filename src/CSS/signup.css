@@ -2,13 +2,13 @@
     margin: 0px;
     padding: 0px;
 }
-.signin-background-container{
+.signup-background-container{
     background: linear-gradient(to left, #8e0e00, #6b1b19); 
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
-.container-signin{
+.container-signup{
     margin: auto;
 }
 
@@ -53,14 +53,12 @@
     box-shadow: white 0px 0px 8px;
 }
 .btn-green{
-    /* background-color: rgb(0, 184, 46); */
     color: white;
     background: linear-gradient(to right, #11998e, #38ef7d);
     box-shadow: #38ef7d 0px 0px 5px;
 }
 .btn-blue{
     color: white;
-    /* background-color: rgb(0, 184, 46); */
     background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
     box-shadow: #0082c8 0px 0px 5px;
 }

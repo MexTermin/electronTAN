@@ -20,12 +20,6 @@ function twobinary(number) {
 function inserTime(id, name, time) {
     const cont = document.querySelector(".bottom-section")
     old = cont.querySelectorAll('.card-timer')
-    // old.forEach(e=>{
-    //     console.log(old[1])
-
-    // })
-
-    // cont.innerHTML =""
     cont.innerHTML += `
                 <div class="card-timer" id='${id}'>
                     <input type="text" name="name" id="name" value='${name}' class='name-control'>
@@ -37,18 +31,6 @@ function inserTime(id, name, time) {
                     </div>
                 </div>
                 `
-
-    // if (old.length > 0) {
-    //     // console.log(old)
-    //     old.forEach(e => {
-
-    //         // console.log(e)
-    //         cont.appendChild(e)
-
-
-    //     })
-    // }
-    // cont.appendChild(old)
 }
 
 function relog(node) {
@@ -130,7 +112,6 @@ stoptb.addEventListener("click", async (e) => {
     stopTime()
     startb.disabled = false
     stoptb.disabled = true
-    // const con = await getConnection()
     const name = document.querySelector('#time-name').value
     const time = document.querySelector('#time').textContent
     const update = document.querySelector('#btnstop').getAttribute('update')
@@ -144,7 +125,6 @@ stoptb.addEventListener("click", async (e) => {
         document.querySelector('#time-name').value = ""
         document.querySelector('#time').textContent = "00:00:00"
         timers()
-        // inserTime(result.insertId,name,time)
     } catch (e) {
         console.log(e)
     }

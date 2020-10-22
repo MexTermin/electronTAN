@@ -19,7 +19,7 @@ async function main() {  // <------this is the main function
     let con
 
     ipcRenderer.on('home:id', async (e, id) => {
-        /* 
+        /*
             home:id is a even that send de note list page with the id of the note selected
         */
         con = await getConnection()
@@ -28,7 +28,6 @@ async function main() {  // <------this is the main function
         edone.checked = result[0].done === 1 ? true : false
         edes.value = result[0].description
         form.setAttribute('note', result[0].note_id) // <----------- i adapted the  note id on de form for more easy search him
-        // console.log(result[0])
     })
 
     form.addEventListener('submit', async (e) => {
